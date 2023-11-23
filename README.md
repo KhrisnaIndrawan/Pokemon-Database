@@ -1,2 +1,7 @@
-# Pokemon-Database
-Simple apps about Pokemon Database using FlutterFlow
+# Pokemon Database
+
+A new Flutter project.
+
+## Getting Started
+
+FlutterFlow projects are built to run on the Flutter _stable_ release.
