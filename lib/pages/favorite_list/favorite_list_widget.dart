@@ -3,20 +3,16 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'favorite_list_model.dart';
 export 'favorite_list_model.dart';
 
 class FavoriteListWidget extends StatefulWidget {
-  const FavoriteListWidget({Key? key}) : super(key: key);
+  const FavoriteListWidget({super.key});
 
   @override
   _FavoriteListWidgetState createState() => _FavoriteListWidgetState();
@@ -43,8 +39,8 @@ class _FavoriteListWidgetState extends State<FavoriteListWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.0, 80.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 80.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -62,8 +58,8 @@ class _FavoriteListWidgetState extends State<FavoriteListWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.0, 90.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 90.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -114,7 +110,7 @@ class _FavoriteListWidgetState extends State<FavoriteListWidget>
             'Pokemon Database',
             style: FlutterFlowTheme.of(context).headlineMedium,
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 0.0,
         ),
@@ -126,14 +122,14 @@ class _FavoriteListWidgetState extends State<FavoriteListWidget>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 0.0, 4.0),
+                            const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 0.0, 4.0),
                         child: Text(
                           'Pokemons',
                           style: FlutterFlowTheme.of(context).bodyMedium,
@@ -159,7 +155,7 @@ class _FavoriteListWidgetState extends State<FavoriteListWidget>
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 16.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 16.0),
                   child: FutureBuilder<ApiCallResponse>(
                     future: PokemonGroup.pokemonListCall.call(),
                     builder: (context, snapshot) {
@@ -196,7 +192,7 @@ class _FavoriteListWidgetState extends State<FavoriteListWidget>
                             itemBuilder: (context, pokemonsIndex) {
                               final pokemonsItem = pokemons[pokemonsIndex];
                               return Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 8.0, 16.0, 0.0),
                                 child: FutureBuilder<ApiCallResponse>(
                                   future: PokemonGroup.pokemonDetailsCall.call(
@@ -227,7 +223,7 @@ class _FavoriteListWidgetState extends State<FavoriteListWidget>
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
-                                        boxShadow: [
+                                        boxShadow: const [
                                           BoxShadow(
                                             blurRadius: 4.0,
                                             color: Color(0x2B202529),
@@ -238,13 +234,13 @@ class _FavoriteListWidgetState extends State<FavoriteListWidget>
                                             BorderRadius.circular(12.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             4.0, 8.0, 4.0, 8.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 0.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -252,7 +248,7 @@ class _FavoriteListWidgetState extends State<FavoriteListWidget>
                                                   Expanded(
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
                                                                   4.0,
@@ -278,7 +274,7 @@ class _FavoriteListWidgetState extends State<FavoriteListWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,
@@ -296,7 +292,7 @@ class _FavoriteListWidgetState extends State<FavoriteListWidget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             0.0,
@@ -330,7 +326,7 @@ class _FavoriteListWidgetState extends State<FavoriteListWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,
@@ -351,7 +347,7 @@ class _FavoriteListWidgetState extends State<FavoriteListWidget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,
@@ -385,7 +381,7 @@ class _FavoriteListWidgetState extends State<FavoriteListWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,
@@ -406,7 +402,7 @@ class _FavoriteListWidgetState extends State<FavoriteListWidget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,
@@ -440,7 +436,7 @@ class _FavoriteListWidgetState extends State<FavoriteListWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,
@@ -461,7 +457,7 @@ class _FavoriteListWidgetState extends State<FavoriteListWidget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,
@@ -500,8 +496,7 @@ class _FavoriteListWidgetState extends State<FavoriteListWidget>
                                                         containerPokemonDetailsResponse
                                                             .jsonBody,
                                                       ),
-                                                      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png' +
-                                                          '$pokemonsIndex',
+                                                      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png' '$pokemonsIndex',
                                                     ),
                                                     transitionOnUserGestures:
                                                         true,
@@ -511,11 +506,11 @@ class _FavoriteListWidgetState extends State<FavoriteListWidget>
                                                               12.0),
                                                       child: CachedNetworkImage(
                                                         fadeInDuration:
-                                                            Duration(
+                                                            const Duration(
                                                                 milliseconds:
                                                                     500),
                                                         fadeOutDuration:
-                                                            Duration(
+                                                            const Duration(
                                                                 milliseconds:
                                                                     500),
                                                         imageUrl:

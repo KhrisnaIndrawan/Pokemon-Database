@@ -1,18 +1,8 @@
 import '/backend/api_requests/api_calls.dart';
-import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'pokemon_list_widget.dart' show PokemonListWidget;
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:provider/provider.dart';
 
 class PokemonListModel extends FlutterFlowModel<PokemonListWidget> {
   ///  State fields for stateful widgets in this page.
@@ -25,8 +15,10 @@ class PokemonListModel extends FlutterFlowModel<PokemonListWidget> {
 
   /// Initialization and disposal methods.
 
+  @override
   void initState(BuildContext context) {}
 
+  @override
   void dispose() {
     unfocusNode.dispose();
     listPagingController?.dispose();
@@ -69,7 +61,7 @@ class PokemonListModel extends FlutterFlowModel<PokemonListWidget> {
         final newNumItems = nextPageMarker.numItems + pageItems.length;
         listPagingController?.appendPage(
           pageItems,
-          (pageItems.length > 0)
+          (pageItems.isNotEmpty)
               ? ApiPagingParams(
                   nextPageNumber: nextPageMarker.nextPageNumber + 1,
                   numItems: newNumItems,

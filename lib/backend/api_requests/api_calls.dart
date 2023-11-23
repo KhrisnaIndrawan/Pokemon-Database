@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:typed_data';
 
 import '/flutter_flow/flutter_flow_util.dart';
 import 'api_manager.dart';
@@ -65,7 +64,7 @@ class PokemonDetailsCall {
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'Pokemon Details',
-      apiUrl: '${PokemonGroup.baseUrl}/pokemon/${name}',
+      apiUrl: '${PokemonGroup.baseUrl}/pokemon/$name',
       callType: ApiCallType.GET,
       headers: {},
       params: {},

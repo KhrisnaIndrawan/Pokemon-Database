@@ -2,22 +2,20 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'pokemon_details_model.dart';
 export 'pokemon_details_model.dart';
 
 class PokemonDetailsWidget extends StatefulWidget {
   const PokemonDetailsWidget({
-    Key? key,
+    super.key,
     this.name,
-  }) : super(key: key);
+  });
 
   final String? name;
 
@@ -101,7 +99,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
               textAlign: TextAlign.start,
               style: FlutterFlowTheme.of(context).headlineSmall,
             ),
-            actions: [],
+            actions: const [],
             centerTitle: false,
             elevation: 0.0,
           ),
@@ -113,7 +111,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -130,7 +128,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 24.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 24.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -152,8 +150,8 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
-                    child: Container(
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
+                    child: SizedBox(
                       width: double.infinity,
                       height: 180.0,
                       child: CarouselSlider(
@@ -222,7 +220,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 12.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 12.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -232,7 +230,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 8.0),
                               child: Text(
                                 'Base Exp',
@@ -260,7 +258,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 8.0),
                               child: Text(
                                 'Height',
@@ -286,7 +284,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 8.0),
                               child: Text(
                                 'Weight',
@@ -320,8 +318,8 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                     width: MediaQuery.sizeOf(context).width * 0.9,
                     height: 70.0,
                     decoration: BoxDecoration(
-                      color: Color(0x9A090F13),
-                      boxShadow: [
+                      color: const Color(0x9A090F13),
+                      boxShadow: const [
                         BoxShadow(
                           blurRadius: 4.0,
                           color: Color(0x43000000),
@@ -334,7 +332,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -363,7 +361,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                         ),
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 16.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -379,14 +377,14 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                       textAlign: TextAlign.start,
                                       style: GoogleFonts.getFont(
                                         'Lexend Deca',
-                                        color: Color(0xB3FFFFFF),
+                                        color: const Color(0xB3FFFFFF),
                                         fontSize: 12.0,
                                       ),
                                     ),
                                   ],
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 4.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -414,7 +412,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -424,7 +422,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                           height: 140.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).secondary,
-                            boxShadow: [
+                            boxShadow: const [
                               BoxShadow(
                                 blurRadius: 4.0,
                                 color: Color(0x37000000),
@@ -437,7 +435,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 0.0),
                                 child: Icon(
                                   Icons.bolt,
@@ -446,7 +444,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 8.0, 0.0, 0.0),
                                 child: AutoSizeText(
                                   'Ability',
@@ -462,7 +460,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 4.0, 8.0, 0.0),
                                   child: Text(
                                     (PokemonGroup.pokemonDetailsCall
@@ -477,7 +475,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                     textAlign: TextAlign.center,
                                     style: GoogleFonts.getFont(
                                       'Lexend Deca',
-                                      color: Color(0xB3FFFFFF),
+                                      color: const Color(0xB3FFFFFF),
                                       fontSize: 12.0,
                                     ),
                                   ),
@@ -491,7 +489,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                           height: 140.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).primary,
-                            boxShadow: [
+                            boxShadow: const [
                               BoxShadow(
                                 blurRadius: 3.0,
                                 color: Color(0x39000000),
@@ -505,7 +503,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 0.0),
                                 child: Icon(
                                   Icons.handyman_sharp,
@@ -514,7 +512,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 8.0, 0.0, 0.0),
                                 child: AutoSizeText(
                                   'Held Item',
@@ -530,7 +528,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 4.0, 8.0, 0.0),
                                   child: Text(
                                     (PokemonGroup.pokemonDetailsCall
@@ -545,7 +543,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                     textAlign: TextAlign.center,
                                     style: GoogleFonts.getFont(
                                       'Lexend Deca',
-                                      color: Color(0xB3FFFFFF),
+                                      color: const Color(0xB3FFFFFF),
                                       fontSize: 12.0,
                                     ),
                                   ),
@@ -559,7 +557,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -569,7 +567,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                           height: 140.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).success,
-                            boxShadow: [
+                            boxShadow: const [
                               BoxShadow(
                                 blurRadius: 4.0,
                                 color: Color(0x37000000),
@@ -582,7 +580,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 0.0),
                                 child: Icon(
                                   Icons.double_arrow,
@@ -591,7 +589,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 8.0, 0.0, 0.0),
                                 child: AutoSizeText(
                                   'Move',
@@ -607,7 +605,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 4.0, 8.0, 0.0),
                                   child: Text(
                                     (PokemonGroup.pokemonDetailsCall.moveName(
@@ -621,7 +619,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                     textAlign: TextAlign.center,
                                     style: GoogleFonts.getFont(
                                       'Lexend Deca',
-                                      color: Color(0xB3FFFFFF),
+                                      color: const Color(0xB3FFFFFF),
                                       fontSize: 12.0,
                                     ),
                                   ),
@@ -635,7 +633,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                           height: 140.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).info,
-                            boxShadow: [
+                            boxShadow: const [
                               BoxShadow(
                                 blurRadius: 3.0,
                                 color: Color(0x39000000),
@@ -649,7 +647,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 0.0),
                                 child: AutoSizeText(
                                   'Base Stat',
@@ -667,7 +665,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -675,14 +673,14 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 0.0),
                                             child: Text(
                                               'HP',
                                               textAlign: TextAlign.center,
                                               style: GoogleFonts.getFont(
                                                 'Lexend Deca',
-                                                color: Color(0xB3FFFFFF),
+                                                color: const Color(0xB3FFFFFF),
                                                 fontSize: 12.0,
                                               ),
                                             ),
@@ -691,7 +689,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 0.0),
                                             child: Text(
                                               (PokemonGroup.pokemonDetailsCall
@@ -706,7 +704,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                               textAlign: TextAlign.center,
                                               style: GoogleFonts.getFont(
                                                 'Lexend Deca',
-                                                color: Color(0xB3FFFFFF),
+                                                color: const Color(0xB3FFFFFF),
                                                 fontSize: 12.0,
                                               ),
                                             ),
@@ -716,7 +714,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -724,14 +722,14 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 0.0),
                                             child: Text(
                                               'Attack',
                                               textAlign: TextAlign.center,
                                               style: GoogleFonts.getFont(
                                                 'Lexend Deca',
-                                                color: Color(0xB3FFFFFF),
+                                                color: const Color(0xB3FFFFFF),
                                                 fontSize: 12.0,
                                               ),
                                             ),
@@ -740,7 +738,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 0.0),
                                             child: Text(
                                               (PokemonGroup.pokemonDetailsCall
@@ -755,7 +753,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                               textAlign: TextAlign.center,
                                               style: GoogleFonts.getFont(
                                                 'Lexend Deca',
-                                                color: Color(0xB3FFFFFF),
+                                                color: const Color(0xB3FFFFFF),
                                                 fontSize: 12.0,
                                               ),
                                             ),
@@ -765,7 +763,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -773,14 +771,14 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 0.0),
                                             child: Text(
                                               'Defense',
                                               textAlign: TextAlign.center,
                                               style: GoogleFonts.getFont(
                                                 'Lexend Deca',
-                                                color: Color(0xB3FFFFFF),
+                                                color: const Color(0xB3FFFFFF),
                                                 fontSize: 12.0,
                                               ),
                                             ),
@@ -789,7 +787,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 0.0),
                                             child: Text(
                                               (PokemonGroup.pokemonDetailsCall
@@ -804,7 +802,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                               textAlign: TextAlign.center,
                                               style: GoogleFonts.getFont(
                                                 'Lexend Deca',
-                                                color: Color(0xB3FFFFFF),
+                                                color: const Color(0xB3FFFFFF),
                                                 fontSize: 12.0,
                                               ),
                                             ),

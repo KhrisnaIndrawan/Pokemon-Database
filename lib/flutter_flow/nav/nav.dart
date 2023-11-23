@@ -2,20 +2,14 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
-import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
 import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -80,13 +74,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : PokemonListWidget(),
+          appStateNotifier.loggedIn ? const NavBarPage() : const PokemonListWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : PokemonListWidget(),
+              appStateNotifier.loggedIn ? const NavBarPage() : const PokemonListWidget(),
         ),
         FFRoute(
           name: 'pokemonDetails',
@@ -99,15 +93,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'pokemonList',
           path: '/pokemonList',
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'pokemonList')
-              : PokemonListWidget(),
+              ? const NavBarPage(initialPage: 'pokemonList')
+              : const PokemonListWidget(),
         ),
         FFRoute(
           name: 'favoriteList',
           path: '/favoriteList',
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'favoriteList')
-              : FavoriteListWidget(),
+              ? const NavBarPage(initialPage: 'favoriteList')
+              : const FavoriteListWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -332,7 +326,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {
