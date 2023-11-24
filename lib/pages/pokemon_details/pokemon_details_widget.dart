@@ -1,13 +1,17 @@
 import '/backend/api_requests/api_calls.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'pokemon_details_model.dart';
 export 'pokemon_details_model.dart';
 
@@ -51,6 +55,8 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
         ),
       );
     }
+
+    context.watch<FFAppState>();
 
     return FutureBuilder<ApiCallResponse>(
       future: PokemonGroup.pokemonDetailsCall.call(
@@ -116,11 +122,14 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Text(
-                          PokemonGroup.pokemonDetailsCall
-                              .firstType(
-                                pokemonDetailsPokemonDetailsResponse.jsonBody,
-                              )
-                              .toString(),
+                          valueOrDefault<String>(
+                            PokemonGroup.pokemonDetailsCall
+                                .firstType(
+                                  pokemonDetailsPokemonDetailsResponse.jsonBody,
+                                )
+                                .toString(),
+                            'Type',
+                          ),
                           style: FlutterFlowTheme.of(context).bodySmall,
                         ),
                       ],
@@ -133,11 +142,14 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Text(
-                          PokemonGroup.pokemonDetailsCall
-                              .name(
-                                pokemonDetailsPokemonDetailsResponse.jsonBody,
-                              )
-                              .toString(),
+                          valueOrDefault<String>(
+                            PokemonGroup.pokemonDetailsCall
+                                .name(
+                                  pokemonDetailsPokemonDetailsResponse.jsonBody,
+                                )
+                                .toString(),
+                            'Pokemon Name',
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
                               .override(
@@ -159,8 +171,11 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.network(
-                              PokemonGroup.pokemonDetailsCall.firstSprite(
-                                pokemonDetailsPokemonDetailsResponse.jsonBody,
+                              valueOrDefault<String>(
+                                PokemonGroup.pokemonDetailsCall.firstSprite(
+                                  pokemonDetailsPokemonDetailsResponse.jsonBody,
+                                ),
+                                'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png',
                               ),
                               width: 300.0,
                               height: 200.0,
@@ -170,8 +185,11 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.network(
-                              PokemonGroup.pokemonDetailsCall.backSprite(
-                                pokemonDetailsPokemonDetailsResponse.jsonBody,
+                              valueOrDefault<String>(
+                                PokemonGroup.pokemonDetailsCall.backSprite(
+                                  pokemonDetailsPokemonDetailsResponse.jsonBody,
+                                ),
+                                'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png',
                               ),
                               width: 300.0,
                               height: 200.0,
@@ -181,8 +199,11 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.network(
-                              PokemonGroup.pokemonDetailsCall.femaleSprite(
-                                pokemonDetailsPokemonDetailsResponse.jsonBody,
+                              valueOrDefault<String>(
+                                PokemonGroup.pokemonDetailsCall.femaleSprite(
+                                  pokemonDetailsPokemonDetailsResponse.jsonBody,
+                                ),
+                                'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png',
                               ),
                               width: 300.0,
                               height: 200.0,
@@ -192,8 +213,12 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.network(
-                              PokemonGroup.pokemonDetailsCall.femaleBackSprite(
-                                pokemonDetailsPokemonDetailsResponse.jsonBody,
+                              valueOrDefault<String>(
+                                PokemonGroup.pokemonDetailsCall
+                                    .femaleBackSprite(
+                                  pokemonDetailsPokemonDetailsResponse.jsonBody,
+                                ),
+                                'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png',
                               ),
                               width: 300.0,
                               height: 200.0,
@@ -238,12 +263,15 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                               ),
                             ),
                             Text(
-                              PokemonGroup.pokemonDetailsCall
-                                  .baseExperience(
-                                    pokemonDetailsPokemonDetailsResponse
-                                        .jsonBody,
-                                  )
-                                  .toString(),
+                              valueOrDefault<String>(
+                                PokemonGroup.pokemonDetailsCall
+                                    .baseExperience(
+                                      pokemonDetailsPokemonDetailsResponse
+                                          .jsonBody,
+                                    )
+                                    .toString(),
+                                '24',
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(
@@ -273,7 +301,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                           .jsonBody,
                                     )
                                     .toString(),
-                                '20',
+                                '24',
                               ),
                               style: FlutterFlowTheme.of(context).displaySmall,
                             ),
@@ -299,7 +327,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                           .jsonBody,
                                     )
                                     .toString(),
-                                '20',
+                                '24',
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
@@ -318,7 +346,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                     width: MediaQuery.sizeOf(context).width * 0.9,
                     height: 70.0,
                     decoration: BoxDecoration(
-                      color: const Color(0x9A090F13),
+                      color: FlutterFlowTheme.of(context).alternate,
                       boxShadow: const [
                         BoxShadow(
                           blurRadius: 4.0,
@@ -327,6 +355,9 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                         )
                       ],
                       borderRadius: BorderRadius.circular(8.0),
+                      border: Border.all(
+                        color: FlutterFlowTheme.of(context).tertiary,
+                      ),
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
@@ -338,23 +369,43 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              FlutterFlowIconButton(
-                                borderColor:
-                                    FlutterFlowTheme.of(context).tertiary,
-                                borderRadius: 20.0,
-                                borderWidth: 1.0,
-                                buttonSize: 40.0,
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                icon: Icon(
-                                  Icons.favorite_border,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 24.0,
-                                ),
-                                onPressed: () {
-                                  print('IconButton pressed ...');
+                              ToggleIcon(
+                                onPressed: () async {
+                                  setState(() => FFAppState().isFavorite =
+                                      !FFAppState().isFavorite);
+                                  if (FFAppState().isFavorite) {
+                                    await FavoritesRecord.collection
+                                        .doc()
+                                        .set(createFavoritesRecordData(
+                                          name: widget.name,
+                                        ));
+                                  } else {
+                                    await queryFavoritesRecordOnce(
+                                      queryBuilder: (favoritesRecord) =>
+                                          favoritesRecord.where(
+                                        'name',
+                                        isEqualTo: widget.name,
+                                      ),
+                                      singleRecord: true,
+                                    ).then((s) => s.firstOrNull);
+                                  }
+
+                                  setState(() {
+                                    FFAppState().isFavorite = false;
+                                  });
                                 },
+                                value: FFAppState().isFavorite,
+                                onIcon: Icon(
+                                  Icons.favorite,
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  size: 40.0,
+                                ),
+                                offIcon: Icon(
+                                  Icons.favorite_border,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 40.0,
+                                ),
                               ),
                             ],
                           ),
@@ -377,7 +428,8 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                       textAlign: TextAlign.start,
                                       style: GoogleFonts.getFont(
                                         'Lexend Deca',
-                                        color: const Color(0xB3FFFFFF),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
                                         fontSize: 12.0,
                                       ),
                                     ),
@@ -397,7 +449,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                               fontFamily: 'Outfit',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .alternate,
+                                                      .primaryText,
                                             ),
                                       ),
                                     ],
@@ -463,15 +515,18 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 4.0, 8.0, 0.0),
                                   child: Text(
-                                    (PokemonGroup.pokemonDetailsCall
-                                            .abilitiesName(
-                                      pokemonDetailsPokemonDetailsResponse
-                                          .jsonBody,
-                                    ) as List)
-                                        .map<String>((s) => s.toString())
-                                        .toList()
-                                        .first
-                                        .toString(),
+                                    valueOrDefault<String>(
+                                      (PokemonGroup.pokemonDetailsCall
+                                              .abilitiesName(
+                                        pokemonDetailsPokemonDetailsResponse
+                                            .jsonBody,
+                                      ) as List)
+                                          .map<String>((s) => s.toString())
+                                          .toList()
+                                          .first
+                                          .toString(),
+                                      'Fire Ball',
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: GoogleFonts.getFont(
                                       'Lexend Deca',
@@ -531,15 +586,7 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 4.0, 8.0, 0.0),
                                   child: Text(
-                                    (PokemonGroup.pokemonDetailsCall
-                                            .heldItemName(
-                                      pokemonDetailsPokemonDetailsResponse
-                                          .jsonBody,
-                                    ) as List)
-                                        .map<String>((s) => s.toString())
-                                        .toList()
-                                        .first
-                                        .toString(),
+                                    'Sword',
                                     textAlign: TextAlign.center,
                                     style: GoogleFonts.getFont(
                                       'Lexend Deca',
@@ -608,14 +655,17 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 4.0, 8.0, 0.0),
                                   child: Text(
-                                    (PokemonGroup.pokemonDetailsCall.moveName(
-                                      pokemonDetailsPokemonDetailsResponse
-                                          .jsonBody,
-                                    ) as List)
-                                        .map<String>((s) => s.toString())
-                                        .toList()
-                                        .first
-                                        .toString(),
+                                    valueOrDefault<String>(
+                                      (PokemonGroup.pokemonDetailsCall.moveName(
+                                        pokemonDetailsPokemonDetailsResponse
+                                            .jsonBody,
+                                      ) as List)
+                                          .map<String>((s) => s.toString())
+                                          .toList()
+                                          .first
+                                          .toString(),
+                                      'Run',
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: GoogleFonts.getFont(
                                       'Lexend Deca',
@@ -692,15 +742,18 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 0.0),
                                             child: Text(
-                                              (PokemonGroup.pokemonDetailsCall
-                                                      .baseStatValue(
-                                                pokemonDetailsPokemonDetailsResponse
-                                                    .jsonBody,
-                                              ) as List)
-                                                  .map<String>(
-                                                      (s) => s.toString())
-                                                  .toList()[0]
-                                                  .toString(),
+                                              valueOrDefault<String>(
+                                                (PokemonGroup.pokemonDetailsCall
+                                                        .baseStatValue(
+                                                  pokemonDetailsPokemonDetailsResponse
+                                                      .jsonBody,
+                                                ) as List)
+                                                    .map<String>(
+                                                        (s) => s.toString())
+                                                    .toList()[0]
+                                                    .toString(),
+                                                '24',
+                                              ),
                                               textAlign: TextAlign.center,
                                               style: GoogleFonts.getFont(
                                                 'Lexend Deca',
@@ -741,15 +794,18 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 0.0),
                                             child: Text(
-                                              (PokemonGroup.pokemonDetailsCall
-                                                      .baseStatValue(
-                                                pokemonDetailsPokemonDetailsResponse
-                                                    .jsonBody,
-                                              ) as List)
-                                                  .map<String>(
-                                                      (s) => s.toString())
-                                                  .toList()[1]
-                                                  .toString(),
+                                              valueOrDefault<String>(
+                                                (PokemonGroup.pokemonDetailsCall
+                                                        .baseStatValue(
+                                                  pokemonDetailsPokemonDetailsResponse
+                                                      .jsonBody,
+                                                ) as List)
+                                                    .map<String>(
+                                                        (s) => s.toString())
+                                                    .toList()[1]
+                                                    .toString(),
+                                                '24',
+                                              ),
                                               textAlign: TextAlign.center,
                                               style: GoogleFonts.getFont(
                                                 'Lexend Deca',
@@ -790,15 +846,18 @@ class _PokemonDetailsWidgetState extends State<PokemonDetailsWidget> {
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 0.0),
                                             child: Text(
-                                              (PokemonGroup.pokemonDetailsCall
-                                                      .baseStatValue(
-                                                pokemonDetailsPokemonDetailsResponse
-                                                    .jsonBody,
-                                              ) as List)
-                                                  .map<String>(
-                                                      (s) => s.toString())
-                                                  .toList()[2]
-                                                  .toString(),
+                                              valueOrDefault<String>(
+                                                (PokemonGroup.pokemonDetailsCall
+                                                        .baseStatValue(
+                                                  pokemonDetailsPokemonDetailsResponse
+                                                      .jsonBody,
+                                                ) as List)
+                                                    .map<String>(
+                                                        (s) => s.toString())
+                                                    .toList()[2]
+                                                    .toString(),
+                                                '24',
+                                              ),
                                               textAlign: TextAlign.center,
                                               style: GoogleFonts.getFont(
                                                 'Lexend Deca',

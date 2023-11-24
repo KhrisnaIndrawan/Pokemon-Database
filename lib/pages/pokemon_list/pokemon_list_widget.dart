@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:provider/provider.dart';
 import 'pokemon_list_model.dart';
 export 'pokemon_list_model.dart';
 
@@ -96,6 +97,8 @@ class _PokemonListWidgetState extends State<PokemonListWidget>
       );
     }
 
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -144,7 +147,7 @@ class _PokemonListWidgetState extends State<PokemonListWidget>
                   child: PagedListView<ApiPagingParams, dynamic>(
                     pagingController: _model.setListController(
                       (nextPageMarker) => PokemonGroup.pokemonListCall.call(
-                        limit: 20,
+                        limit: 10,
                         offset: nextPageMarker.numItems,
                       ),
                     ),
@@ -284,10 +287,14 @@ class _PokemonListWidgetState extends State<PokemonListWidget>
                                                                         0.0,
                                                                         0.0),
                                                             child: Text(
-                                                              getJsonField(
-                                                                pokemonsItem,
-                                                                r'''$.name''',
-                                                              ).toString(),
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                getJsonField(
+                                                                  pokemonsItem,
+                                                                  r'''$.name''',
+                                                                ).toString(),
+                                                                'Pickachu',
+                                                              ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .titleMedium,
@@ -302,13 +309,17 @@ class _PokemonListWidgetState extends State<PokemonListWidget>
                                                                         0.0,
                                                                         0.0),
                                                             child: Text(
-                                                              PokemonGroup
-                                                                  .pokemonDetailsCall
-                                                                  .firstType(
-                                                                    containerPokemonDetailsResponse
-                                                                        .jsonBody,
-                                                                  )
-                                                                  .toString(),
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                PokemonGroup
+                                                                    .pokemonDetailsCall
+                                                                    .firstType(
+                                                                      containerPokemonDetailsResponse
+                                                                          .jsonBody,
+                                                                    )
+                                                                    .toString(),
+                                                                'Type',
+                                                              ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodySmall
@@ -356,13 +367,17 @@ class _PokemonListWidgetState extends State<PokemonListWidget>
                                                                         0.0,
                                                                         0.0),
                                                             child: Text(
-                                                              PokemonGroup
-                                                                  .pokemonDetailsCall
-                                                                  .baseExperience(
-                                                                    containerPokemonDetailsResponse
-                                                                        .jsonBody,
-                                                                  )
-                                                                  .toString(),
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                PokemonGroup
+                                                                    .pokemonDetailsCall
+                                                                    .baseExperience(
+                                                                      containerPokemonDetailsResponse
+                                                                          .jsonBody,
+                                                                    )
+                                                                    .toString(),
+                                                                '24',
+                                                              ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodySmall
@@ -410,13 +425,17 @@ class _PokemonListWidgetState extends State<PokemonListWidget>
                                                                         0.0,
                                                                         0.0),
                                                             child: Text(
-                                                              PokemonGroup
-                                                                  .pokemonDetailsCall
-                                                                  .height(
-                                                                    containerPokemonDetailsResponse
-                                                                        .jsonBody,
-                                                                  )
-                                                                  .toString(),
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                PokemonGroup
+                                                                    .pokemonDetailsCall
+                                                                    .height(
+                                                                      containerPokemonDetailsResponse
+                                                                          .jsonBody,
+                                                                    )
+                                                                    .toString(),
+                                                                '24',
+                                                              ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodySmall
@@ -464,13 +483,17 @@ class _PokemonListWidgetState extends State<PokemonListWidget>
                                                                         0.0,
                                                                         0.0),
                                                             child: Text(
-                                                              PokemonGroup
-                                                                  .pokemonDetailsCall
-                                                                  .weight(
-                                                                    containerPokemonDetailsResponse
-                                                                        .jsonBody,
-                                                                  )
-                                                                  .toString(),
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                PokemonGroup
+                                                                    .pokemonDetailsCall
+                                                                    .weight(
+                                                                      containerPokemonDetailsResponse
+                                                                          .jsonBody,
+                                                                    )
+                                                                    .toString(),
+                                                                '24',
+                                                              ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodySmall
