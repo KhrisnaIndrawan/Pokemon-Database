@@ -1,4 +1,4 @@
-# Dokumentasi FlutterFlow
+<img width="427" alt="image" src="https://github.com/KhrisnaIndrawan/Pokemon-Database/assets/17492185/02ff24fc-1151-4bdb-af5a-702f3441553e"># Dokumentasi FlutterFlow
 
 ## Overview
 
@@ -25,14 +25,16 @@ Untuk memulai dengan FlutterFlow, ada beberapa langkah yang harus dilakukan:
 
 1. **Daftar:** Buat akun di situs web FlutterFlow.
 2. **Buat Proyek Baru:** Mulai proyek baru dan pilih platform (iOS, Android, atau web).
-![img.png](img.png)
+<img width="1436" alt="Screenshot 2023-11-21 at 13 36 56" src="https://github.com/KhrisnaIndrawan/Pokemon-Database/assets/17492185/06f851eb-5980-490e-a083-ca836b7d6a58">
 3. **Menyiapkan Pengambilan dan Penyimpanan Data:** Flutterflow support berbagai opsi untuk mengatur back-end, sepert call API atau menggunakan Firebase/Firestore.
-![img_3.png](img_3.png)
-![img_10.png](img_10.png)
+<img width="1679" alt="image" src="https://github.com/KhrisnaIndrawan/Pokemon-Database/assets/17492185/ada86157-ac28-4b47-8d0d-5649c5c76e25">
+<img width="1206" alt="Screenshot 2023-11-23 at 13 35 59" src="https://github.com/KhrisnaIndrawan/Pokemon-Database/assets/17492185/c048f107-83fc-452a-a030-6be1b04fed1e">
+![Screenshot 2023-11-23 at 16 03 33](https://github.com/KhrisnaIndrawan/Pokemon-Database/assets/17492185/d4f3302e-7ee8-45d5-b99f-a1f471110323)
 4. **Desain Visual:** Menggunakan editor visual untuk merancang UI aplikasi dengan cara metode drag n drop.
-![img_1.png](img_1.png)
+<img width="1679" alt="image" src="https://github.com/KhrisnaIndrawan/Pokemon-Database/assets/17492185/96ecbe27-8f8c-479b-b6af-88389751bf15">
 5. **Menambahkan Fungsionalitas:** Menentukan logika aplikasi dengan menghubungkan blok dengan metode pemrograman visual.
-![img_2.png](img_2.png)
+<img width="1679" alt="image" src="https://github.com/KhrisnaIndrawan/Pokemon-Database/assets/17492185/c8c0dd5d-4170-481e-b212-e4ec1e4a93ac">
+
 
 ### Integrasi (dengan Android Studio untuk menjalankan aplikasi secara local)
 
@@ -42,12 +44,11 @@ Untuk mengintegrasikan FlutterFlow ke dalam Android Studio, berikut beberapa car
 1. **Install Flutter SDK:**
 2. **Menyiapkan akun dan repository github:**
 3. **Integrasi GitHub pada halaman setting FlutterFlow:**
-![img_4.png](img_4.png)
+<img width="1679" alt="image" src="https://github.com/KhrisnaIndrawan/Pokemon-Database/assets/17492185/9de4950b-e4fb-4b38-8b06-e71c62e7c576">
 4. **Install dan koneksikan akun flutterflow apps dengan GitHub:**
-
 5. **Push project flutterflow pada GitHub:**
 6. **Clone project di AndroidStudio dan menjalankan perintah flutter pub get:**
-![img_5.png](img_5.png)
+<img width="1680" alt="image" src="https://github.com/KhrisnaIndrawan/Pokemon-Database/assets/17492185/addb2b24-5d90-4d5a-badd-fd0f58b43542">
 
 ## Pro dan Kontra
 
@@ -72,11 +73,10 @@ Tech Stack:
   - Store favorite data: Firebase/Firestore
 - Pages:
   - Pokemon List Page
-    - ![img_7.png](img_7.png)
+    - <img width="427" alt="image" src="https://github.com/KhrisnaIndrawan/Pokemon-Database/assets/17492185/aeb0b943-0de6-4dbd-ba9b-0467f04679f2">
   - Pokemon Details Page
-    - ![img_8.png](img_8.png)
+    - <img width="427" alt="image" src="https://github.com/KhrisnaIndrawan/Pokemon-Database/assets/17492185/524239be-c309-4f8f-b73b-09765039aacf">
   - Pokemon Favorite List Page
-    - ![img_9.png](img_9.png)
+    - <img width="427" alt="image" src="https://github.com/KhrisnaIndrawan/Pokemon-Database/assets/17492185/96360e5e-d758-4fca-add0-60123cf815d5">
 - Video:
-  - ![img_11.png](img_11.png)
-  - ![img_14.png](img_14.png)
+  - 
