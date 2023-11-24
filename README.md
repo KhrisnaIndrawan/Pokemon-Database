@@ -79,4 +79,6 @@ Tech Stack:
   - Pokemon Favorite List Page
     - <img width="427" alt="image" src="https://github.com/KhrisnaIndrawan/Pokemon-Database/assets/17492185/96360e5e-d758-4fca-add0-60123cf815d5">
 - Video:
-  - <img width="427" alt="image" src="https://github.com/KhrisnaIndrawan/Pokemon-Database/assets/17492185/02ff24fc-1151-4bdb-af5a-702f3441553e">
+[![Watch the video](https://img.youtube.com/vi/AHZMPHUKWaY/hqdefault.jpg)](https://www.youtube.com/embed/AHZMPHUKWaY)
+[<img src="https://img.youtube.com/vi/AHZMPHUKWaY/hqdefault.jpg" width="600" height="300"
+/>](https://www.youtube.com/embed/AHZMPHUKWaY)
