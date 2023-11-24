@@ -110,7 +110,7 @@ class _FavoriteListWidgetState extends State<FavoriteListWidget>
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
           title: Text(
-            'FavoriteList',
+            'Favorite List',
             style: FlutterFlowTheme.of(context).headlineMedium,
           ),
           actions: const [],
