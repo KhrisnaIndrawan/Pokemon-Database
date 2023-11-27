@@ -75,6 +75,10 @@ Tech Stack:
 - Back-end:
   - Pokemon API: (base) https://pokeapi.co/api/v2/
   - Store favorite data: Firebase/Firestore
+- Functionaliy:
+  - Infinity list of pokemons
+  - Pokemon detail information
+  - Favorite pokemon list
 - Pages:
   - Pokemon List Page
     - <img width="427" alt="image" src="https://github.com/KhrisnaIndrawan/Pokemon-Database/assets/17492185/aeb0b943-0de6-4dbd-ba9b-0467f04679f2">
